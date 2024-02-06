@@ -1,0 +1,153 @@
+main{
+    padding-top: 40px;
+    max-width: 1024px;
+    margin: 0 auto;
+    position: relative;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 40px;
+}
+/* products styles */
+.snowboards{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+.snowboards__item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid black;
+    background-color: aliceblue;
+    border-radius: 15px;
+    padding: 1rem;
+}
+.snowboards__item-info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+.snowboards__item-img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid gray;
+}
+.snowboards__item-name{
+    font-size: 18px;
+}
+.snowboards__item-price{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+.more__button{
+    padding: 1rem;
+    background-color: blanchedalmond;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+/* product page styles */
+
+.product__card{
+    margin-top: 100px;
+    width: 450px;
+    margin: 0 auto;
+    border: 1px solid black;
+    background-color: aliceblue;
+    border-radius: 15px;
+}
+.product__card-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.product__card-img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.product__card-name{
+    font-size: 18px;
+    font-weight: bold;
+    margin: 1rem 0rem;
+}
+.product__card-info{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.product__card-buy{
+    display: block;
+    padding: 1rem;
+    border-radius: 15px;
+    border: 1px solid black;
+    background-color: gainsboro;
+}
+.product__card-price{
+    text-align: center;
+    font-weight: bold;
+}
+
+/* main page text styles */
+
+.main__text{
+    font-size: 18px;
+}
+
+/* buy page styles */
+
+.form{
+    width: 400px;
+    margin: 120px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background-color: aliceblue;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 1rem;
+}
+.form__field{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* orders page styles */
+
+.orders{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+.orders__item{
+    background-color: aliceblue;
+    border: 1px solid gray;
+    padding: 1rem;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.orders__row{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

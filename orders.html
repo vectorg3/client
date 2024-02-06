@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Заказы</title>
+</head>
+<body>
+    <h1>Магазин сноубордов "SnowLand"</h1>
+    <header>
+        <a href="/index.html">Главная</a>
+        <a href="/products.html">Товары</a>
+        <a href="/buy.html">Купить</a>
+        <a href="/orders.html">Заказы</a>
+    </header>
+    <main>
+        <h1>Заказы</h1>
+        <div class="orders" id="orders">
+        </div>
+    </main>
+</body>
+</html>
+<script lang="javascript">
+const renderOrders = async () => {
+  await fetch(url, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json;charset=utf-8",
+    },
+  })
+    .then((response) => response.json())
+    .then((orders) => {
+      let innerHTML = ``;
+      orders.forEach((order) => {
+        innerHTML += `<div class="orders__item">
+        <div class="orders__row">
+          <span style="font-weight: 700">Товар</span>${order.board}
+        </div>
+        <div class="orders__row">
+          <span style="font-weight: 700">Заказчик</span>${order.name}
+        </div>
+        <div class="orders__row">
+          <span style="font-weight: 700">Номер</span>${order.phone}
+        </div>
+        <div class="orders__row">
+          <span style="font-weight: 700">Адрес</span>${order.address}
+        </div>
+        <button id="delete__button" onclick="deleteOrder('${order._id}')">
+          Удалить заявку
+        </button>
+      </div>`;
+      });
+      document.getElementById("orders").innerHTML = innerHTML;
+    });
+};
+
+const deleteOrder = async (id) => {
+  try {
+    let response = await fetch(url + `${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+    }); 
+    if (response.ok) {
+      await renderOrders();
+    } else {
+      alert("Ошибка запроса");
+    }
+  } catch (error) {
+    alert("Ошибка запроса " + error);
+  }
+};
+
+let url = "https://snowland-server.onrender.com/";
+renderOrders();
+</script>
